@@ -481,17 +481,17 @@
 
       // Write a JavaScript functionality to change the color of the main heading title
       function changeH1Color() {
-        let heading = document.querySelector("h1");
+        let heading = document.querySelector(".jumbotron h1");
         heading.style.color = "green";
       }
       changeH1Color();
 
       // Write a JavaScript functionality to change the background of the jumbotron
-      function changeBg() {
+      function changeBg(color) {
         let firstJumbotron = document.querySelector("div .jumbotron");
-        firstJumbotron.style.backgroundColor = "pink";
+        firstJumbotron.style.backgroundColor = color;
       }
-      changeBg();
+      changeBg("pink");
 
       // Write a JavaScript functionality to remove the “twitter” link under the “Elsewhere” section in the aside element. It should happen when the page loads, automatically
       window.onload = function removeTwitter() {
@@ -503,15 +503,35 @@
 
       // Write a JavaScript functionality to remove the first 50 characters in the first paragraph for every blog post
       function remove50() {
-        let posts = document.querySelectorAll("div .blog-post p");
+        let posts = document.querySelectorAll("div .blog-post p:first-of-type");
+        for (let i = 0; i < posts.length; i++) {
+          let paraText = posts[i].innerText;
+          let arrayOfLetters = paraText.split("");
+          let output = arrayOfLetters.slice(50);
+          let joinedOutput = output.join("");
+          posts[i].innerText = joinedOutput;
+        }
       }
-      remove50();
 
       // Write a JavaScript functionality to add a new Blog Post (div with title and text)
+
+      function newBlog() {
+        let blogs = document.querySelectorAll(".blog-post ");
+        let newBlog = document.createElement("div");
+      }
 
       // Write a JavaScript functionality to remove the last Blog Post when the user clicks on the "Older" button
 
       // Write a JavaScript functionality that will create an alert with the name of the author every time the user hovers the mouse on an author's name
+      function alertHover() {
+        let authors = document.querySelectorAll(".blog-post-meta a");
+        for (let i = 0; i < authors.length; i++) {
+          authors[i].addEventListener("mouseover", function () {
+            alert(authors[i].innerText);
+          });
+        }
+      }
+      alertHover();
 
       // EXTRA Write a JavaScript functionality that will remove the corresponding parent card from the DOM, upon clicking on their “Continue reading” link
     </script>
