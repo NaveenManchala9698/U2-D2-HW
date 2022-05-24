@@ -53,6 +53,14 @@
       }
 
       /* 11 */
+      .blog-pagination .btn:nth-child(2) {
+        background-color: darksalmon;
+      }
+
+      /* 12 */
+      .blog-footer .text-center a:last-of-type {
+        border: 1px solid blue;
+      }
     </style>
     <meta charset="utf-8" />
     <meta
@@ -463,16 +471,48 @@
     <script>
       /* JS Exercises should go here */
       // Write a JavaScript functionality to add a new link into the navbar
+      function linkNew() {
+        let newLink = document.querySelector("nav");
+        let createLink = document.createElement("span");
+        createLink.innerText = "Naveen";
+        newLink.appendChild(createLink);
+      }
+      linkNew();
+
       // Write a JavaScript functionality to change the color of the main heading title
+      function changeH1Color() {
+        let heading = document.querySelector("h1");
+        heading.style.color = "green";
+      }
+      changeH1Color();
+
       // Write a JavaScript functionality to change the background of the jumbotron
+      function changeBg() {
+        let firstJumbotron = document.querySelector("div .jumbotron");
+        firstJumbotron.style.backgroundColor = "pink";
+      }
+      changeBg();
 
       // Write a JavaScript functionality to remove the “twitter” link under the “Elsewhere” section in the aside element. It should happen when the page loads, automatically
+      window.onload = function removeTwitter() {
+        let twitterRemove = document.querySelector(
+          ".col-md-4 div:last-of-type ol li:nth-child(2) a"
+        );
+        twitterRemove.remove();
+      };
 
       // Write a JavaScript functionality to remove the first 50 characters in the first paragraph for every blog post
+      function remove50() {
+        let posts = document.querySelectorAll("div .blog-post p");
+      }
+      remove50();
+
       // Write a JavaScript functionality to add a new Blog Post (div with title and text)
+
       // Write a JavaScript functionality to remove the last Blog Post when the user clicks on the "Older" button
 
       // Write a JavaScript functionality that will create an alert with the name of the author every time the user hovers the mouse on an author's name
+
       // EXTRA Write a JavaScript functionality that will remove the corresponding parent card from the DOM, upon clicking on their “Continue reading” link
     </script>
   </body>
